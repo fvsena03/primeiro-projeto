@@ -5,73 +5,117 @@
     box-sizing: border-box;
 }
 
+/* Body e fonte */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Oggi', 'Georgia', serif; /* Usa Oggi se tiver, senão Georgia como fallback */
     line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
+    color: #ffffff; /* branco para contraste com fundo escuro */
+    background-color: #0b1d3a; /* azul marinho escuro */
     padding: 20px;
 }
 
+/* Cabeçalho */
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #f5f5f5; /* destaque sobre azul escuro */
 }
 
 header p {
-    margin-bottom: 10px;
+    max-width: 800px;
+    margin: 10px auto;
+    color: #d0d0d0; /* tom mais claro para leitura confortável */
 }
 
+/* Seções */
 section {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #333;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #ffffff;
     display: inline-block;
     padding-bottom: 5px;
+    color: #ffffff;
+}
+
+/* Projetos */
+#projetos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .projeto {
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #162b4f; /* azul mais claro que o fundo */
+    padding: 20px;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.5);
 }
 
 .projeto h3 {
     margin-bottom: 10px;
+    color: #a0d8f1; /* azul claro para títulos de projeto */
+}
+
+.projeto p {
+    margin-bottom: 15px;
+    color: #e0e0e0; /* texto claro */
 }
 
 .projeto a {
-    color: #1a73e8;
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background-color: #f5f5f5; /* botão branco para contraste */
+    color: #0b1d3a; /* texto escuro no botão */
     text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .projeto a:hover {
-    text-decoration: underline;
+    background-color: #a0d8f1;
 }
 
+/* Contato */
 ul {
     list-style: none;
+    text-align: center;
 }
 
 ul li {
     margin-bottom: 10px;
 }
 
+ul a {
+    color: #a0d8f1;
+    text-decoration: none;
+}
+
+ul a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 8px;
+    background-color: #0a1730; /* azul marinho mais escuro que o body */
+    color: #ffffff;
+    border-radius: 12px;
 }
