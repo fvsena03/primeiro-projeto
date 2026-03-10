@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Completa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="todo-inputs">
+            <input type="text" id="nomeTarefa" placeholder="Nome da tarefa">
+            <input type="time" id="horaTarefa">
+            <button onclick="adicionarTarefa()">Adicionar</button>
+        </div>
+        <ul id="listaTarefas"></ul>
+    </div>
+
+    <script>
+        const listaTarefas = document.getElementById("listaTarefas");
+        const inputNome = document.getElementById("nomeTarefa");
+        const inputHora = document.getElementById("horaTarefa");
+
+        function adicionarTarefa() {
+            const nome = inputNome.value.trim();
+            const hora = inputHora.value;
+
+            if (nome === "" || hora === "") return;
+
+            const li = document.createElement("li");
+
+            // Checkbox para marcar como concluída
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.onclick = () => {
+                if (checkbox.checked) {
+                    spanNome.style.textDecoration = "line-through";
+                    spanHora.style.textDecoration = "line-through";
+                } else {
+                    spanNome.style.textDecoration = "none";
+                    spanHora.style.textDecoration = "none";
+                }
+            };
+
+            // Nome da tarefa
+            const spanNome = document.createElement("span");
+            spanNome.textContent = nome;
+
+            // Horário da tarefa
+            const spanHora = document.createElement("span");
+            spanHora.textContent = hora;
+
+            li.appendChild(checkbox);
+            li.appendChild(spanNome);
+            li.appendChild(spanHora);
+
+            listaTarefas.appendChild(li);
+
+            // Limpar campos
+            inputNome.value = "";
+            inputHora.value = "";
+        }
+    </script>
+</body>
+</html>
